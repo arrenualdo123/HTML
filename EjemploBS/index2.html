@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/EjemploBS/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Link</a></li>
+                </ul>
+                <from class="d-flex" role="search">
+                    <input type="search" class="from-control me-2">
+                    <button class="btn btn-success" type="submit">Buscar</button>
+                </from>
+            </div>
+        </div>
+    </nav>
+    <div class="container p-5 border">
+        <h1>Mi primer pagina boostrap</h1>
+        <p>Este contenedor es con border y algo de padding y margen.</p>
+        <div id="liveAlertPlaceholder"></div>
+        <button type="button" class="btn btn-warning" id="liveAlertBtn">Alerta</button>
+    </div>
+    <div class="container p-5 bg-primary text-white">
+        <h1>Mi segundo div de bootstrap</h1>
+        <p>Este contenedor es con fondo azul y texto blanco y algo de padding y margen.</p>
+        <table class="table table-hover table-bordered">
+            <thead class="table-primary">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th colspan="4">List of Users</th>
+                </tr>
+            </tfoot>
+            <body>
+                <tr>
+                    <td>1</td> 
+                    <td>Alma</td>
+                    <td>Madero</td>
+                    <td>almamed@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jos</td>
+                    <td>Gomez</td>
+                    <td>josgomez@gmail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>leslie</td>
+                    <td>Vergas</td>
+                    <td>mamovergas3mil@gmail.com</td>
+                </tr>
+            </body>
+        </table>
+    </div>
+    <div class="container p-5 bg-dark text-white">
+        <h1 style="font-family: Pixelify Sans, sans-serif;">Mi tercer div de bootstrap</h1>
+        <p>Este contenedor es con fondo negro y texto blanco y algo de padding y margen.</p>
+    </div>
+    <script src="/EjemploBS/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <script>
+        const alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+        const appendAlert = (message, type) => {
+            const wrapper = document.createElement('div')
+            wrapper.innerHTML = [
+                `<div class="alert alert-${type} alert-dismissible" role="alert">`,
+                `   <div>${message}</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+            ].join('')
+
+            alertPlaceholder.append(wrapper)
+        }
+
+        const alertTrigger = document.getElementById('liveAlertBtn')
+        if (alertTrigger) {
+            alertTrigger.addEventListener('click', () => {
+                appendAlert('Activaste el alerta pendejo!', 'danger')
+            })
+        }
+    </script>
+</body>
+
+</html>

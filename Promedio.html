@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificación de Promedio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Verificación de Promedio</h1>
+    <form id="gradesForm">
+        <label for="grade1">Promedio 1:</label>
+        <input type="number" id="grade1" required><br>
+        <label for="grade2">Promedio 2:</label>
+        <input type="number" id="grade2" required><br>
+        <label for="grade3">Promedio 3:</label>
+        <input type="number" id="grade3" required><br>
+        <label for="grade4">Promedio 4:</label>
+        <input type="number" id="grade4" required><br>
+        <label for="grade5">Promedio 5:</label>
+        <input type="number" id="grade5" required><br>
+        <button type="submit">Verificar Promedio</button>
+    </form>
+    <div class="result" id="result"></div>
+
+    <script>
+        document.getElementById('gradesForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío del formulario
+
+            // Obtener las notas ingresadas
+            const grades = [
+                parseFloat(document.getElementById('grade1').value),
+                parseFloat(document.getElementById('grade2').value),
+                parseFloat(document.getElementById('grade3').value),
+                parseFloat(document.getElementById('grade4').value),
+                parseFloat(document.getElementById('grade5').value)
+            ];
+
+            // Calcular el promedio
+            const sum = grades.reduce((acc, grade) => acc + grade, 0);
+            const average = sum / grades.length;
+            const resultDiv = document.getElementById('result');
+
+            // Verificar si el promedio es aprobado o reprobado
+            if (average >= 70) {
+                resultDiv.textContent = `Aprobado. Tu promedio es: ${average.toFixed(2)}`;
+                resultDiv.style.color = "green";
+            } else {
+                resultDiv.textContent = `Reprobado. Tu promedio es: ${average.toFixed(2)}`;
+                resultDiv.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

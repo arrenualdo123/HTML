@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor de Grados C° a F°</title>
+</head>
+<body>
+    <p>Presione el boton para convertir grados Centigrados a Fahrenheint</p>
+    <button type="button" onclick="convertir()">Pulsar</button>
+
+    <script>
+        function convertir() {
+            var gradosC = parseFloat(prompt("Ingrese los grados Centigrados"));
+            var gradosF = (gradosC * 9/5) + 32;
+            document.write("Es equivalente a "+gradosF+"° Fahrenheint");
+            window.alert(gradosF+"° Fahrenheint");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arreglos con Botones</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #frutas {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: inset 0px 2px 5px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        let frutas = ["Manzana", "Banana", "Naranja", "Pera", "Fresa"];
+        
+        function imprimirFrutas() {
+            let resultado = 'Longitud del array: ' + frutas.length + '<br><br>';
+            
+            for (let i = 0; i < frutas.length; i++) {
+                resultado += (i + 1) + ". " + frutas[i] + '<br>';
+            }
+
+            document.getElementById("frutas").innerHTML = resultado;
+        }
+
+        function agregarFruta() {
+            let nuevaFruta = prompt("Ingresa el nombre de una nueva fruta:");
+            if (nuevaFruta) {
+                frutas.push(nuevaFruta);
+                imprimirFrutas();
+            }
+        }
+
+        function eliminarFruta() {
+            let posicion = prompt("Ingresa la posición de la fruta que deseas eliminar (1 - " + frutas.length + "):");
+            let indice = parseInt(posicion) - 1;
+            
+            if (indice >= 0 && indice < frutas.length) {
+                frutas.splice(indice, 1);
+                imprimirFrutas();
+            } else {
+                alert("Posición inválida");
+            }
+        }
+    </script>
+</head>
+<body onload="imprimirFrutas()">
+
+    <div class="container">
+        <h1>Lista de Frutas</h1>
+        <p id="frutas"></p>
+        <button onclick="agregarFruta()">Agregar Fruta</button>
+        <button onclick="eliminarFruta()">Eliminar Fruta</button>
+    </div>
+
+</body>
+</html>

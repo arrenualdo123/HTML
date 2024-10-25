@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bucle for y Arreglos</title>
+    <script>
+        function imprimirNumeros() {
+            let resultado = '';
+            for (let i = 1; i <= 10; i++) {
+                resultado += i + '<br>';
+            }
+            document.getElementById("numeros").innerHTML = resultado;
+        }
+    </script>
+</head>
+<body onload="imprimirNumeros()">
+
+    <h1>Ejercicio Bucle for</h1>
+    <p id="numeros"></p>
+
+</body>
+</html>

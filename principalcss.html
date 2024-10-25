@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina Principal</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .header {
+            background-color: gainsboro;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: black;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: aliceblue;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a:hover {
+            background-color: pink;
+            color: black;
+        }
+
+        .column {
+            float: left;
+            width: 33%;
+            padding: 15px;
+        }
+
+        .row::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (max-width: 600px){
+            .column{
+                width: 100%;
+            }
+        }
+        .footer{
+            background-color: gainsboro;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Cabecera</h1>
+    </div>
+    <div class="topnav">
+        <a href="#">Link1</a>
+        <a href="#">Link2</a>
+        <a href="#">Link3</a>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h2>Columna</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi quidem ipsum recusandae iure a architecto,
+                saepe harum dignissimos vitae fugit deserunt dolorem ea quibusdam, cum vel? Quisquam consectetur aperiam
+                voluptatibus!</p>
+        </div>
+        <div class="column">
+            <h2>Columna</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi quidem ipsum recusandae iure a architecto,
+                saepe harum dignissimos vitae fugit deserunt dolorem ea quibusdam, cum vel? Quisquam consectetur aperiam
+                voluptatibus!</p>
+        </div>
+        <div class="column">
+            <h2>Columna</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi quidem ipsum recusandae iure a architecto,
+                saepe harum dignissimos vitae fugit deserunt dolorem ea quibusdam, cum vel? Quisquam consectetur aperiam
+                voluptatibus!</p>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Pie de Pagina</p>
+    </div>
+</body>
+
+</html>
